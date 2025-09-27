@@ -295,31 +295,12 @@ body, html {
     display: inline-block;
 }
 
-.flag-de { background: linear-gradient(to bottom, #000000 33%, #DD0000 33%, #DD0000 66%, #FFCE00 66%); }
-.flag-fr { background: linear-gradient(to right, #0055A4 33%, white 33%, white 66%, #EF4135 66%); }
-.flag-en { 
-    background: #012169;
-    position: relative;
-    overflow: hidden;
-}
-.flag-en::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        linear-gradient(45deg, transparent 45%, white 45%, white 47%, #CE1124 47%, #CE1124 53%, white 53%, white 55%, transparent 55%),
-        linear-gradient(-45deg, transparent 45%, white 45%, white 47%, #CE1124 47%, #CE1124 53%, white 53%, white 55%, transparent 55%),
-        linear-gradient(90deg, transparent 45%, white 45%, white 47%, #CE1124 47%, #CE1124 53%, white 53%, white 55%, transparent 55%),
-        linear-gradient(0deg, transparent 45%, white 45%, white 47%, #CE1124 47%, #CE1124 53%, white 53%, white 55%, transparent 55%);
-}
-.flag-es { background: linear-gradient(to bottom, #AA151B 25%, #F1BF00 25%, #F1BF00 75%, #AA151B 75%); }
-.flag-pt { background: linear-gradient(to right, #046A38 40%, #DA020E 40%); }
-.flag-ar { 
-    display: none;
-}
+.flag-de { background-image: url("https://cdn.onylab.com/image/flag/4x3/de.svg"); }
+.flag-en { background-image: url("https://cdn.onylab.com/image/flag/4x3/gb.svg"); }
+.flag-es { background-image: url("https://cdn.onylab.com/image/flag/4x3/es.svg"); }
+.flag-fr { background-image: url("https://cdn.onylab.com/image/flag/4x3/fr.svg"); }
+.flag-pt { background-image: url("https://cdn.onylab.com/image/flag/4x3/pt.svg"); }
+.flag-ar { display: none; }
 
 .dropdown-arrow {
     transition: transform 0.3s ease;
