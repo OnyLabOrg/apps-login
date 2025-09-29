@@ -79,10 +79,22 @@ function detectBrowserLanguage() {
 function updateContent(lang) {
     const t = translations[lang];
     
-    document.querySelector('.logo').textContent = t.title;
-    document.querySelector('.subtitle').innerHTML = t.subtitle;
-    document.querySelector('.connect-button').innerHTML = `<span class="hubrise-icon"></span>${t.connectButton}`;
-    document.querySelector('.footer-text').innerHTML = `<small>${t.secureConnection}</small>`;
+    const logo = document.querySelector('.logo');
+    if (logo !== null) {
+        logo.textContent = t.title;
+    }
+    const subtitle = document.querySelector('.subtitle');
+    if (subtitle !== null) {
+        subtitle.innerHTML = t.subtitle;
+    }
+    const connectButton = document.querySelector('.connect-button');
+    if (connectButton !== null) {
+        document.querySelector('.connect-button').innerHTML = `<span class="hubrise-icon"></span>${t.connectButton}`;
+    }
+    const footerText = document.querySelector('.footer-text');
+    if (footerText !== null) {
+        document.querySelector('.footer-text').innerHTML = `<small>${t.secureConnection}</small>`;
+    }
     
     // Update text direction for Arabic
     if (lang === 'ar') {
