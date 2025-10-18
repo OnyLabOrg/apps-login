@@ -291,5 +291,5 @@ function connectToApp(appKey) {
             card.style.opacity = '1';
             card.style.pointerEvents = 'auto';
         });
-    }, 100);
+    }, 300);
 }
