@@ -178,11 +178,7 @@ function connectToHubrise() {
     
     setTimeout(() => {
         button.style.transform = 'scale(1)';
-        // Here you can redirect to HubRise authentication URL
-        // window.location.href = 'https://manager.hubrise.com/oauth2/v1/authorize?...';
-        
-        // For demo, we simulate a connection
-        alert(t.redirectMessage);
+        window.location.href = 'https://manager.hubrise.com/oauth2/v1/authorize?...';
         button.innerHTML = `<span class="hubrise-icon"></span>${t.connectButton}`;
     }, 1000);
 }
