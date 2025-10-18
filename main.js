@@ -193,21 +193,6 @@ function showInfo() {
     alert(t.infoMessage);
 }
 
-// Mouse move animation for floating elements
-document.addEventListener('mousemove', (e) => {
-    const floatingElements = document.querySelectorAll('.floating-element');
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-
-    floatingElements.forEach((element, index) => {
-        const speed = (index + 1) * 0.5;
-        const xOffset = (x - 0.5) * speed * 20;
-        const yOffset = (y - 0.5) * speed * 20;
-        
-        element.style.transform += ` translate(${xOffset}px, ${yOffset}px)`;
-    });
-});
-
 // Parallax effect on login card
 document.addEventListener('mousemove', (e) => {
     const card = document.querySelector('.login-card');
