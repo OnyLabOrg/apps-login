@@ -497,7 +497,7 @@ body, html {
     backdrop-filter: blur(10px);
 }
 
-.app-icon {
+.app-icon img {
     width: 100%;
 }
 
