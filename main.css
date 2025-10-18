@@ -486,7 +486,6 @@ body, html {
 .app-icon {
     width: 64px;
     height: 64px;
-    background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     display: flex;
     align-items: center;
