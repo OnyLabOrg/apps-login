@@ -152,6 +152,22 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Particle animation
+function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 50;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 3 + 's';
+        particle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        particlesContainer.appendChild(particle);
+    }
+}
+
 // HubRise connection function
 function connectToHubrise() {
     const button = document.querySelector('.connect-button');
@@ -162,8 +178,11 @@ function connectToHubrise() {
     
     setTimeout(() => {
         button.style.transform = 'scale(1)';
+        // Here you can redirect to HubRise authentication URL
+        // window.location.href = 'https://manager.hubrise.com/oauth2/v1/authorize?...';
         
-        window.location.href = 'https://manager.hubrise.com/oauth2/v1/authorize?...';
+        // For demo, we simulate a connection
+        alert(t.redirectMessage);
         button.innerHTML = `<span class="hubrise-icon"></span>${t.connectButton}`;
     }, 1000);
 }
