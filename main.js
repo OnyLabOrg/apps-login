@@ -272,3 +272,24 @@ document.addEventListener('keydown', (e) => {
         connectToHubrise();
     }
 });
+
+// Connect to specific app
+function connectToApp(appKey) {
+    // Add visual feedback
+    const cards = document.querySelectorAll('.app-card');
+    cards.forEach(card => {
+        card.style.opacity = '0.5';
+        card.style.pointerEvents = 'none';
+    });
+    
+    // Simulate connection
+    setTimeout(() => {
+        window.location.href = 'https://login.apps.onylab.com/auth?app=' + String(appKey);
+        
+        // Restore cards
+        cards.forEach(card => {
+            card.style.opacity = '1';
+            card.style.pointerEvents = 'auto';
+        });
+    }, 100);
+}
