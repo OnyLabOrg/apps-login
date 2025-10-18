@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apps - OnyLab</title>
+    <title>Connection - OnyLab</title>
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg" />
     <link rel="alternate icon" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link rel="apple-touch-icon" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link href="main.css?v=1" rel="stylesheet">
-    <link href="apps.css?v=1" rel="stylesheet">
 </head>
 <body>
     <div class="background"></div>
@@ -70,23 +69,17 @@
                 Connect to your OnyLab application
             </p>
             
-            <div class="apps-grid">
-                <div class="app-card app-a" onclick="connectToApp('APP_A')">
-                    <div class="app-icon">A</div>
-                    <div class="app-name">APP_A</div>
-                </div>
-                <div class="app-card app-b" onclick="connectToApp('APP_B')">
-                    <div class="app-icon">B</div>
-                    <div class="app-name">APP_B</div>
-                </div>
-                <div class="app-card app-c" onclick="connectToApp('APP_C')">
-                    <div class="app-icon">C</div>
-                    <div class="app-name">APP_C</div>
-                </div>
+            <button class="connect-button" onclick="connectToHubrise()">
+                <span class="hubrise-icon"></span>
+                Connect with HubRise
+            </button>
+            
+            <div class="footer-text">
+                <small>Secure connection via HubRise</small>
             </div>
         </div>
     </div>
+
     <script src="main.js?v=1" type="text/javascript"></script>
-    <script src="apps.js?v=1" type="text/javascript"></script>
 </body>
 </html>
