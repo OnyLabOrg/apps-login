@@ -180,21 +180,6 @@ function createParticles() {
     }
 }
 
-// HubRise connection function
-function connectToHubrise() {
-    const button = document.querySelector('.connect-button');
-    const t = translations[currentLang];
-    
-    button.style.transform = 'scale(0.95)';
-    button.innerHTML = `<span class="hubrise-icon"></span>${t.connecting}`;
-    
-    setTimeout(() => {
-        button.style.transform = 'scale(1)';
-        window.location.href = 'https://manager.hubrise.com/oauth2/v1/authorize?...';
-        button.innerHTML = `<span class="hubrise-icon"></span>${t.connectButton}`;
-    }, 1000);
-}
-
 // Information function
 function showInfo() {
     const t = translations[currentLang];
@@ -257,13 +242,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.querySelector('.login-card').style.opacity = '1';
     }, 300);
-});
-
-// Keyboard handling
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        connectToHubrise();
-    }
 });
 
 // Connect to specific app
