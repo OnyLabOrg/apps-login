@@ -373,6 +373,10 @@ body, html {
 }
 
 .app-card:hover {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.app-card.flipped {
     transform: rotateY(180deg);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }

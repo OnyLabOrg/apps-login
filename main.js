@@ -200,3 +200,36 @@ document.addEventListener('DOMContentLoaded', () => {
 function connectToApp(appKey) {
     window.location.href = 'https://login.apps.onylab.com/auth?app=' + String(appKey);
 }
+
+// Flip cards — lock state during transition to prevent animation glitches
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.app-card').forEach(card => {
+        let isAnimating = false;
+
+        function onFlipEnd() {
+            isAnimating = false;
+            if (!card.matches(':hover')) {
+                card.classList.remove('flipped');
+            }
+        }
+
+        card.addEventListener('mouseenter', () => {
+            isAnimating = true;
+            card.classList.add('flipped');
+        });
+
+        card.addEventListener('mouseleave', () => {
+            if (!isAnimating) {
+                card.classList.remove('flipped');
+                return;
+            }
+            // Wait for the flip transition to complete before unflipping
+            card.addEventListener('transitionend', function handler(e) {
+                if (e.propertyName !== 'transform') return;
+                card.removeEventListener('transitionend', handler);
+                onFlipEnd();
+            });
+            setTimeout(onFlipEnd, 3000);
+        });
+    });
+});
