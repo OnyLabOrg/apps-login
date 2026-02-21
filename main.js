@@ -7,7 +7,7 @@ const translations = {
         secureConnection: "Sichere Verbindung über HubRise",
         infoMessage: "HubRise ist eine Integrationsplattform, mit der Sie Ihr Kassensystem mit vielen Anwendungen verbinden können.\n\nDie OAuth-Verbindung gewährleistet die Sicherheit Ihrer Daten.",
         redirectMessage: "Weiterleitung zu HubRise...\n\nErsetzen Sie in der Produktion diese Warnung durch die echte HubRise-Authentifizierungs-URL.",
-        badge: {email: "email", order: "bestellung", sms: "sms"}
+        badge: {email: "email", marketing: "marketing", order: "bestellung", sms: "sms"}
     },
     fr: {
         title: "Connectez-vous à votre application OnyLab",
@@ -16,7 +16,7 @@ const translations = {
         secureConnection: "Connexion sécurisée via HubRise",
         infoMessage: "HubRise est une plateforme d'intégration qui permet de connecter votre point de vente à de nombreuses applications.\n\nLa connexion OAuth garantit la sécurité de vos données.",
         redirectMessage: "Redirection vers HubRise...\n\nEn production, remplacez cette alerte par la vraie URL d'authentification HubRise.",
-        badge: {email: "email", order: "commande", sms: "sms"}
+        badge: {email: "email", marketing: "marketing", order: "commande", sms: "sms"}
     },
     en: {
         title: "Connect to your OnyLab application",
@@ -25,7 +25,7 @@ const translations = {
         secureConnection: "Secure connection via HubRise",
         infoMessage: "HubRise is an integration platform that allows you to connect your point of sale to many applications.\n\nThe OAuth connection guarantees the security of your data.",
         redirectMessage: "Redirecting to HubRise...\n\nIn production, replace this alert with the real HubRise authentication URL.",
-        badge: {email: "email", order: "order", sms: "sms"}
+        badge: {email: "email", marketing: "marketing", order: "order", sms: "sms"}
     },
     es: {
         title: "Conéctese a su aplicación OnyLab",
@@ -34,7 +34,7 @@ const translations = {
         secureConnection: "Conexión segura vía HubRise",
         infoMessage: "HubRise es una plataforma de integración que le permite conectar su punto de venta a muchas aplicaciones.\n\nLa conexión OAuth garantiza la seguridad de sus datos.",
         redirectMessage: "Redirigiendo a HubRise...\n\nEn producción, reemplace esta alerta con la URL real de autenticación de HubRise.",
-        badge: {email: "correo electrónico", order: "pedido", sms: "sms"}
+        badge: {email: "correo electrónico", marketing: "marketing", order: "pedido", sms: "sms"}
     },
     pt: {
         title: "Conecte-se à sua aplicação OnyLab",
@@ -43,7 +43,7 @@ const translations = {
         secureConnection: "Conexão segura via HubRise",
         infoMessage: "HubRise é uma plataforma de integração que permite conectar seu ponto de venda a muitas aplicações.\n\nA conexão OAuth garante a segurança dos seus dados.",
         redirectMessage: "Redirecionando para HubRise...\n\nEm produção, substitua este alerta pela URL real de autenticação do HubRise.",
-        badge: {email: "email", order: "pedido", sms: "sms"}
+        badge: {email: "email", marketing: "marketing", order: "pedido", sms: "sms"}
     },
     ar: {
         title: "اتصل بتطبيق OnyLab الخاص بك",
@@ -52,7 +52,7 @@ const translations = {
         secureConnection: "اتصال آمن عبر HubRise",
         infoMessage: "HubRise هي منصة تكامل تتيح لك ربط نقطة البيع الخاصة بك بالعديد من التطبيقات.\n\nيضمن اتصال OAuth أمان بياناتك.",
         redirectMessage: "إعادة توجيه إلى HubRise...\n\nفي الإنتاج، استبدل هذا التنبيه بعنوان URL الحقيقي لمصادقة HubRise.",
-        badge: {email: "البريد الإلكتروني", order: "طلب", sms: "رسالة نصية"}
+        badge: {email: "البريد الإلكتروني", marketing: "التسويق", order: "طلب", sms: "رسالة نصية"}
     }
 };
 
