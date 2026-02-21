@@ -1,24 +1,118 @@
-// Translations
 const translations = {
     de: {
         title: "Melden Sie sich bei Ihrer OnyLab-Anwendung an",
-        badge: {email: "email", marketing: "marketing", order: "bestellung", sms: "sms"}
+        "app": {
+            "brevo": {
+                "description": "E-Mail- und SMS-Marketing-Plattform. Synchronisieren Sie HubRise-Kunden mit Brevo."
+            },
+            "mailjet": {
+                "description": "E-Mail-Marketing-Plattform. Synchronisieren Sie HubRise-Kunden mit Mailjet."
+            },
+            "orderpad": {
+                "description": "Nehmen Sie Bestellungen schnell per Telefon auf Ihrem Tablet oder Computer entgegen."
+            },
+            "smsmode": {
+                "description": "SMS-Marketing-Plattform. Synchronisieren Sie HubRise-Kunden mit smsmode."
+            }
+        },
+        badge: {
+            email: "email",
+            marketing: "marketing",
+            order: "bestellung",
+            sms: "sms"
+        }
     },
     fr: {
         title: "Connectez-vous à votre application OnyLab",
-        badge: {email: "email", marketing: "marketing", order: "commande", sms: "sms"}
+        "app": {
+            "brevo": {
+                "description": "Plateforme de marketing par email et SMS. Synchronisez les clients HubRise avec Brevo."
+            },
+            "mailjet": {
+                "description": "Plateforme de marketing par email. Synchronisez les clients HubRise avec Mailjet."
+            },
+            "orderpad": {
+                "description": "Prenez des commandes rapidement par téléphone sur votre tablette ou votre ordinateur."
+            },
+            "smsmode": {
+                "description": "Plateforme de marketing par SMS. Synchronisez les clients HubRise avec smsmode."
+            }
+        },
+        badge: {
+            email: "email",
+            marketing: "marketing",
+            order: "commande",
+            sms: "sms"
+        }
     },
     en: {
         title: "Connect to your OnyLab application",
-        badge: {email: "email", marketing: "marketing", order: "order", sms: "sms"}
+        app: {
+            brevo: {
+                description: "Email &amp; SMS marketing platform. Synchronize HubRise customers with Brevo."
+            },
+            mailjet: {
+                description: "Email marketing platform. Synchronize HubRise customers with Mailjet."
+            },
+            orderpad: {
+                description: "Take orders quickly by phone on your tablet or computer."
+            },
+            smsmode: {
+                description: "SMS marketing platform. Synchronize HubRise customers with smsmode."
+            }
+        },
+        badge: {
+            email: "email",
+            marketing: "marketing",
+            order: "order",
+            sms: "sms"
+        }
     },
     es: {
         title: "Conéctese a su aplicación OnyLab",
-        badge: {email: "correo electrónico", marketing: "marketing", order: "pedido", sms: "sms"}
+        "app": {
+            "brevo": {
+                "description": "Plataforma de marketing por correo electrónico y SMS. Sincroniza los clientes de HubRise con Brevo."
+            },
+            "mailjet": {
+                "description": "Plataforma de marketing por correo electrónico. Sincroniza los clientes de HubRise con Mailjet."
+            },
+            "orderpad": {
+                "description": "Toma pedidos rápidamente por teléfono en tu tablet o computadora."
+            },
+            "smsmode": {
+                "description": "Plataforma de marketing por SMS. Sincroniza los clientes de HubRise con smsmode."
+            }
+        },
+        badge: {
+            email: "correo electrónico",
+            marketing: "marketing",
+            order: "pedido",
+            sms: "sms"
+        }
     },
     pt: {
         title: "Conecte-se à sua aplicação OnyLab",
-        badge: {email: "email", marketing: "marketing", order: "pedido", sms: "sms"}
+        "app": {
+            "brevo": {
+                "description": "Plataforma de marketing por e-mail e SMS. Sincronize os clientes do HubRise com a Brevo."
+            },
+            "mailjet": {
+                "description": "Plataforma de marketing por e-mail. Sincronize os clientes do HubRise com a Mailjet."
+            },
+            "orderpad": {
+                "description": "Receba pedidos rapidamente por telefone no seu tablet ou computador."
+            },
+            "smsmode": {
+                "description": "Plataforma de marketing por SMS. Sincronize os clientes do HubRise com a smsmode."
+            }
+        },
+        badge: {
+            email: "email",
+            marketing: "marketing",
+            order: "pedido",
+            sms: "sms"
+        }
     },
 };
 
@@ -48,6 +142,22 @@ function updateContent(lang) {
     const title = document.querySelector('.title');
     if (title !== null) {
         title.innerHTML = t.title;
+    }
+    const appDescriptionBrevo = document.querySelector('.app-description-brevo');
+    if (appDescriptionBrevo !== null) {
+        appDescriptionBrevo.innerHTML = t.app.brevo.description;
+    }
+    const appDescriptionMailjet = document.querySelector('.app-description-mailjet');
+    if (appDescriptionMailjet !== null) {
+        appDescriptionMailjet.innerHTML = t.app.mailjet.description;
+    }
+    const appDescriptionOrderPad = document.querySelector('.app-description-orderpad');
+    if (appDescriptionOrderPad !== null) {
+        appDescriptionOrderPad.innerHTML = t.app.orderpad.description;
+    }
+    const appDescriptionSMSMode = document.querySelector('.app-description-smsmode');
+    if (appDescriptionSMSMode !== null) {
+        appDescriptionSMSMode.innerHTML = t.app.smsmode.description;
     }
     const badgeEmail = document.querySelector('.app-badge-email');
     if (badgeEmail !== null) {
