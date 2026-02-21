@@ -15,65 +15,79 @@
 
     <div class="particles" id="particles"></div>
 
-    <div class="language-selector">
-        <div class="language-dropdown">
-            <button class="language-button" onclick="toggleLanguageMenu()">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <span class="language-flag" id="currentFlag"></span>
-                    <span id="currentLanguage">English</span>
+    <header>
+        <div class="logo-section">
+            <a href="/">
+                <div class="logo-mark">
+                  <img src="https://cdn.onylab.com/image/logo/icon/svg/white/logo.svg" />
                 </div>
-                <span class="dropdown-arrow" id="dropdownArrow">▼</span>
-            </button>
-            <div class="language-menu" id="languageMenu">
-                <div class="language-option" onclick="selectLanguage('de', 'Deutsch', 'flag-de')">
-                    <span class="language-flag flag-de"></span>
-                    <span>Deutsch</span>
-                </div>
-                <div class="language-option active" onclick="selectLanguage('en', 'English', 'flag-en')">
-                    <span class="language-flag flag-en"></span>
-                    <span>English</span>
-                </div>
-                <div class="language-option" onclick="selectLanguage('es', 'Español', 'flag-es')">
-                    <span class="language-flag flag-es"></span>
-                    <span>Español</span>
-                </div>
-                <div class="language-option" onclick="selectLanguage('fr', 'Français', 'flag-fr')">
-                    <span class="language-flag flag-fr"></span>
-                    <span>Français</span>
-                </div>
-                <div class="language-option" onclick="selectLanguage('pt', 'Português', 'flag-pt')">
-                    <span class="language-flag flag-pt"></span>
-                    <span>Português</span>
-                </div>
-                <div class="language-option" onclick="selectLanguage('ar', 'العربية', 'flag-ar')">
-                    <span class="language-flag flag-ar"></span>
-                    <span>العربية</span>
+                <h1 class="logo-name">OnyLab</h1>
+            </a>
+        </div>
+        
+        <div class="language-selector">
+            <div class="language-dropdown">
+                <button class="language-button" onclick="toggleLanguageMenu()">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="language-flag" id="currentFlag"></span>
+                        <span id="currentLanguage">English</span>
+                    </div>
+                    <span class="dropdown-arrow" id="dropdownArrow">▼</span>
+                </button>
+                <div class="language-menu" id="languageMenu">
+                    <div class="language-option" onclick="selectLanguage('de', 'Deutsch', 'flag-de')">
+                        <span class="language-flag flag-de"></span>
+                        <span>Deutsch</span>
+                    </div>
+                    <div class="language-option active" onclick="selectLanguage('en', 'English', 'flag-en')">
+                        <span class="language-flag flag-en"></span>
+                        <span>English</span>
+                    </div>
+                    <div class="language-option" onclick="selectLanguage('es', 'Español', 'flag-es')">
+                        <span class="language-flag flag-es"></span>
+                        <span>Español</span>
+                    </div>
+                    <div class="language-option" onclick="selectLanguage('fr', 'Français', 'flag-fr')">
+                        <span class="language-flag flag-fr"></span>
+                        <span>Français</span>
+                    </div>
+                    <div class="language-option" onclick="selectLanguage('pt', 'Português', 'flag-pt')">
+                        <span class="language-flag flag-pt"></span>
+                        <span>Português</span>
+                    </div>
+                    <div class="language-option" onclick="selectLanguage('ar', 'العربية', 'flag-ar')">
+                        <span class="language-flag flag-ar"></span>
+                        <span>العربية</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
     <div class="container">
         <div class="login-card">
-            <h1 class="logo">OnyLab</h1>
-            <p class="subtitle">
+            <p class="title">
                 Connect to your OnyLab application
             </p>
             
             <div class="apps-grid">
                 <div class="app-card app" onclick="connectToApp('brevo')">
+                    <div class="app-badge-section"><span class="app-badge app-badge-email">EMAIL</span><span class="app-badge app-badge-sms">SMS</span></div>
                     <div class="app-icon"><img src="https://cdn.onylab.com/image/apps/favicon/brevo.svg" style="margin:5px" /></div>
                     <div class="app-name">Brevo Bridge</div>
                 </div>
                 <div class="app-card app" onclick="connectToApp('mailjet')">
+                    <div class="app-badge-section"><span class="app-badge app-badge-email">EMAIL</span></div>
                     <div class="app-icon"><img src="https://cdn.onylab.com/image/apps/favicon/mailjet.svg" style="margin:5px" /></div>
                     <div class="app-name">Mailjet Bridge</div>
                 </div>
                 <div class="app-card app" onclick="connectToApp('orderpad')">
+                    <div class="app-badge-section"><span class="app-badge app-badge-order">ORDER</span></div>
                     <div class="app-icon"><img src="https://cdn.onylab.com/image/apps/favicon/orderpad.svg" /></div>
                     <div class="app-name">OrderPad</div>
                 </div>
                 <div class="app-card app" onclick="connectToApp('smsmode')">
+                    <div class="app-badge-section"><span class="app-badge app-badge-sms">SMS</span></div>
                     <div class="app-icon"><img src="https://cdn.onylab.com/image/apps/favicon/smsmode.svg" style="margin:5px" /></div>
                     <div class="app-name">SMSMode Bridge</div>
                 </div>

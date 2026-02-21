@@ -1,58 +1,58 @@
 // Translations
 const translations = {
     de: {
-        title: "OnyLab",
-        subtitle: "Melden Sie sich bei Ihrer OnyLab-Anwendung an",
+        title: "Melden Sie sich bei Ihrer OnyLab-Anwendung an",
         connectButton: "Mit HubRise verbinden",
         connecting: "Verbindung wird hergestellt...",
         secureConnection: "Sichere Verbindung über HubRise",
         infoMessage: "HubRise ist eine Integrationsplattform, mit der Sie Ihr Kassensystem mit vielen Anwendungen verbinden können.\n\nDie OAuth-Verbindung gewährleistet die Sicherheit Ihrer Daten.",
-        redirectMessage: "Weiterleitung zu HubRise...\n\nErsetzen Sie in der Produktion diese Warnung durch die echte HubRise-Authentifizierungs-URL."
+        redirectMessage: "Weiterleitung zu HubRise...\n\nErsetzen Sie in der Produktion diese Warnung durch die echte HubRise-Authentifizierungs-URL.",
+        badge: {email: "email", order: "bestellung", sms: "sms"}
     },
     fr: {
-        title: "OnyLab",
-        subtitle: "Connectez-vous à votre application OnyLab",
+        title: "Connectez-vous à votre application OnyLab",
         connectButton: "Se connecter avec HubRise",
         connecting: "Connexion en cours...",
         secureConnection: "Connexion sécurisée via HubRise",
         infoMessage: "HubRise est une plateforme d'intégration qui permet de connecter votre point de vente à de nombreuses applications.\n\nLa connexion OAuth garantit la sécurité de vos données.",
-        redirectMessage: "Redirection vers HubRise...\n\nEn production, remplacez cette alerte par la vraie URL d'authentification HubRise."
+        redirectMessage: "Redirection vers HubRise...\n\nEn production, remplacez cette alerte par la vraie URL d'authentification HubRise.",
+        badge: {email: "email", order: "commande", sms: "sms"}
     },
     en: {
-        title: "OnyLab",
-        subtitle: "Connect to your OnyLab application",
+        title: "Connect to your OnyLab application",
         connectButton: "Connect with HubRise",
         connecting: "Connecting...",
         secureConnection: "Secure connection via HubRise",
         infoMessage: "HubRise is an integration platform that allows you to connect your point of sale to many applications.\n\nThe OAuth connection guarantees the security of your data.",
-        redirectMessage: "Redirecting to HubRise...\n\nIn production, replace this alert with the real HubRise authentication URL."
+        redirectMessage: "Redirecting to HubRise...\n\nIn production, replace this alert with the real HubRise authentication URL.",
+        badge: {email: "email", order: "order", sms: "sms"}
     },
     es: {
-        title: "OnyLab",
-        subtitle: "Conéctese a su aplicación OnyLab",
+        title: "Conéctese a su aplicación OnyLab",
         connectButton: "Conectar con HubRise",
         connecting: "Conectando...",
         secureConnection: "Conexión segura vía HubRise",
         infoMessage: "HubRise es una plataforma de integración que le permite conectar su punto de venta a muchas aplicaciones.\n\nLa conexión OAuth garantiza la seguridad de sus datos.",
-        redirectMessage: "Redirigiendo a HubRise...\n\nEn producción, reemplace esta alerta con la URL real de autenticación de HubRise."
+        redirectMessage: "Redirigiendo a HubRise...\n\nEn producción, reemplace esta alerta con la URL real de autenticación de HubRise.",
+        badge: {email: "correo electrónico", order: "pedido", sms: "sms"}
     },
     pt: {
-        title: "OnyLab",
-        subtitle: "Conecte-se à sua aplicação OnyLab",
+        title: "Conecte-se à sua aplicação OnyLab",
         connectButton: "Conectar com HubRise",
         connecting: "Conectando...",
         secureConnection: "Conexão segura via HubRise",
         infoMessage: "HubRise é uma plataforma de integração que permite conectar seu ponto de venda a muitas aplicações.\n\nA conexão OAuth garante a segurança dos seus dados.",
-        redirectMessage: "Redirecionando para HubRise...\n\nEm produção, substitua este alerta pela URL real de autenticação do HubRise."
+        redirectMessage: "Redirecionando para HubRise...\n\nEm produção, substitua este alerta pela URL real de autenticação do HubRise.",
+        badge: {email: "email", order: "pedido", sms: "sms"}
     },
     ar: {
-        title: "OnyLab",
-        subtitle: "اتصل بتطبيق OnyLab الخاص بك",
+        title: "اتصل بتطبيق OnyLab الخاص بك",
         connectButton: "الاتصال مع HubRise",
         connecting: "جارٍ الاتصال...",
         secureConnection: "اتصال آمن عبر HubRise",
         infoMessage: "HubRise هي منصة تكامل تتيح لك ربط نقطة البيع الخاصة بك بالعديد من التطبيقات.\n\nيضمن اتصال OAuth أمان بياناتك.",
-        redirectMessage: "إعادة توجيه إلى HubRise...\n\nفي الإنتاج، استبدل هذا التنبيه بعنوان URL الحقيقي لمصادقة HubRise."
+        redirectMessage: "إعادة توجيه إلى HubRise...\n\nفي الإنتاج، استبدل هذا التنبيه بعنوان URL الحقيقي لمصادقة HubRise.",
+        badge: {email: "البريد الإلكتروني", order: "طلب", sms: "رسالة نصية"}
     }
 };
 
@@ -79,13 +79,25 @@ function detectBrowserLanguage() {
 function updateContent(lang) {
     const t = translations[lang];
     
-    const logo = document.querySelector('.logo');
-    if (logo !== null) {
-        logo.textContent = t.title;
+    const title = document.querySelector('.title');
+    if (title !== null) {
+        title.innerHTML = t.title;
     }
-    const subtitle = document.querySelector('.subtitle');
-    if (subtitle !== null) {
-        subtitle.innerHTML = t.subtitle;
+    const badgeEmail = document.querySelector('.app-badge-email');
+    if (badgeEmail !== null) {
+        badgeEmail.innerHTML = t.badge.email;
+    }
+    const badgeSms = document.querySelector('.app-badge-sms');
+    if (badgeSms !== null) {
+        badgeSms.innerHTML = t.badge.sms;
+    }
+    const badgeOrder = document.querySelector('.app-badge-order');
+    if (badgeOrder !== null) {
+        badgeOrder.innerHTML = t.badge.order;
+    }
+    const badgeMarketing = document.querySelector('.app-badge-marketing');
+    if (badgeMarketing !== null) {
+        badgeMarketing.innerHTML = t.badge.marketing;
     }
     const connectButton = document.querySelector('.connect-button');
     if (connectButton !== null) {
@@ -256,21 +268,5 @@ document.addEventListener('keydown', (e) => {
 
 // Connect to specific app
 function connectToApp(appKey) {
-    // Add visual feedback
-    const cards = document.querySelectorAll('.app-card');
-    cards.forEach(card => {
-        card.style.opacity = '0.5';
-        card.style.pointerEvents = 'none';
-    });
-    
-    // Simulate connection
-    setTimeout(() => {
-        window.location.href = 'https://login.apps.onylab.com/auth?app=' + String(appKey);
-        
-        // Restore cards
-        cards.forEach(card => {
-            card.style.opacity = '1';
-            card.style.pointerEvents = 'auto';
-        });
-    }, 300);
+    window.location.href = 'https://login.apps.onylab.com/auth?app=' + String(appKey);
 }
