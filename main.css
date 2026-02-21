@@ -229,6 +229,10 @@ body, html {
     top: 30px;
     right: 30px;
     z-index: 20;
+    /* Vertically center relative to the logo-section (36px icon + line-height) */
+    height: 36px;
+    display: flex;
+    align-items: center;
 }
 
 .language-dropdown {
@@ -402,6 +406,12 @@ body, html {
     margin-bottom: 40px;
 }
 
+/* Flip card wrapper — replaces direct app-card sizing */
+.app-card-wrapper {
+    perspective: 1000px;
+    aspect-ratio: 1;
+}
+
 .app-card {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 20px;
@@ -411,36 +421,59 @@ body, html {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
     position: relative;
-    overflow: hidden;
-    aspect-ratio: 1;
-}
-
-.app-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
+    /* Flip card */
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.app-card:hover::before {
-    left: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.55s ease, box-shadow 0.3s ease;
 }
 
 .app-card:hover {
-    transform: translateY(-5px) scale(1.05);
+    transform: rotateY(180deg);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .app-card:active {
-    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
+
+/* Front & back faces */
+.app-card__face {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.app-card__face--front {
+    /* inherits card background */
+}
+
+.app-card__face--back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+}
+
+.app-card.app .app-card__face--back {
+    background: linear-gradient(135deg, #2e2e2e 0%, #3c3c3c 100%);
+}
+
+
 
 .app-card.app {
     background: linear-gradient(135deg, #2e2e2e 0%, #3c3c3c 100%);
@@ -525,6 +558,10 @@ body, html {
     }
 
     .app-card {
+        padding: 20px;
+    }
+
+    .app-card__face {
         padding: 20px;
     }
 
