@@ -2,58 +2,24 @@
 const translations = {
     de: {
         title: "Melden Sie sich bei Ihrer OnyLab-Anwendung an",
-        connectButton: "Mit HubRise verbinden",
-        connecting: "Verbindung wird hergestellt...",
-        secureConnection: "Sichere Verbindung über HubRise",
-        infoMessage: "HubRise ist eine Integrationsplattform, mit der Sie Ihr Kassensystem mit vielen Anwendungen verbinden können.\n\nDie OAuth-Verbindung gewährleistet die Sicherheit Ihrer Daten.",
-        redirectMessage: "Weiterleitung zu HubRise...\n\nErsetzen Sie in der Produktion diese Warnung durch die echte HubRise-Authentifizierungs-URL.",
         badge: {email: "email", marketing: "marketing", order: "bestellung", sms: "sms"}
     },
     fr: {
         title: "Connectez-vous à votre application OnyLab",
-        connectButton: "Se connecter avec HubRise",
-        connecting: "Connexion en cours...",
-        secureConnection: "Connexion sécurisée via HubRise",
-        infoMessage: "HubRise est une plateforme d'intégration qui permet de connecter votre point de vente à de nombreuses applications.\n\nLa connexion OAuth garantit la sécurité de vos données.",
-        redirectMessage: "Redirection vers HubRise...\n\nEn production, remplacez cette alerte par la vraie URL d'authentification HubRise.",
         badge: {email: "email", marketing: "marketing", order: "commande", sms: "sms"}
     },
     en: {
         title: "Connect to your OnyLab application",
-        connectButton: "Connect with HubRise",
-        connecting: "Connecting...",
-        secureConnection: "Secure connection via HubRise",
-        infoMessage: "HubRise is an integration platform that allows you to connect your point of sale to many applications.\n\nThe OAuth connection guarantees the security of your data.",
-        redirectMessage: "Redirecting to HubRise...\n\nIn production, replace this alert with the real HubRise authentication URL.",
         badge: {email: "email", marketing: "marketing", order: "order", sms: "sms"}
     },
     es: {
         title: "Conéctese a su aplicación OnyLab",
-        connectButton: "Conectar con HubRise",
-        connecting: "Conectando...",
-        secureConnection: "Conexión segura vía HubRise",
-        infoMessage: "HubRise es una plataforma de integración que le permite conectar su punto de venta a muchas aplicaciones.\n\nLa conexión OAuth garantiza la seguridad de sus datos.",
-        redirectMessage: "Redirigiendo a HubRise...\n\nEn producción, reemplace esta alerta con la URL real de autenticación de HubRise.",
         badge: {email: "correo electrónico", marketing: "marketing", order: "pedido", sms: "sms"}
     },
     pt: {
         title: "Conecte-se à sua aplicação OnyLab",
-        connectButton: "Conectar com HubRise",
-        connecting: "Conectando...",
-        secureConnection: "Conexão segura via HubRise",
-        infoMessage: "HubRise é uma plataforma de integração que permite conectar seu ponto de venda a muitas aplicações.\n\nA conexão OAuth garante a segurança dos seus dados.",
-        redirectMessage: "Redirecionando para HubRise...\n\nEm produção, substitua este alerta pela URL real de autenticação do HubRise.",
         badge: {email: "email", marketing: "marketing", order: "pedido", sms: "sms"}
     },
-    ar: {
-        title: "اتصل بتطبيق OnyLab الخاص بك",
-        connectButton: "الاتصال مع HubRise",
-        connecting: "جارٍ الاتصال...",
-        secureConnection: "اتصال آمن عبر HubRise",
-        infoMessage: "HubRise هي منصة تكامل تتيح لك ربط نقطة البيع الخاصة بك بالعديد من التطبيقات.\n\nيضمن اتصال OAuth أمان بياناتك.",
-        redirectMessage: "إعادة توجيه إلى HubRise...\n\nفي الإنتاج، استبدل هذا التنبيه بعنوان URL الحقيقي لمصادقة HubRise.",
-        badge: {email: "البريد الإلكتروني", marketing: "التسويق", order: "طلب", sms: "رسالة نصية"}
-    }
 };
 
 let currentLang = 'en';
@@ -65,7 +31,7 @@ function detectBrowserLanguage() {
     const langCode = browserLang.split('-')[0];
     
     // Supported languages
-    const supportedLangs = ['de', 'fr', 'en', 'es', 'pt', 'ar'];
+    const supportedLangs = ['de', 'fr', 'en', 'es', 'pt'];
     
     if (supportedLangs.includes(langCode)) {
         return langCode;
@@ -98,14 +64,6 @@ function updateContent(lang) {
     const badgeMarketing = document.querySelector('.app-badge-marketing');
     if (badgeMarketing !== null) {
         badgeMarketing.innerHTML = t.badge.marketing;
-    }
-    const connectButton = document.querySelector('.connect-button');
-    if (connectButton !== null) {
-        document.querySelector('.connect-button').innerHTML = `<span class="hubrise-icon"></span>${t.connectButton}`;
-    }
-    const footerText = document.querySelector('.footer-text');
-    if (footerText !== null) {
-        document.querySelector('.footer-text').innerHTML = `<small>${t.secureConnection}</small>`;
     }
     
     // Update text direction for Arabic
@@ -178,12 +136,6 @@ function createParticles() {
         particle.style.animationDuration = (Math.random() * 2 + 2) + 's';
         particlesContainer.appendChild(particle);
     }
-}
-
-// Information function
-function showInfo() {
-    const t = translations[currentLang];
-    alert(t.infoMessage);
 }
 
 // Parallax effect on login card
