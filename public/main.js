@@ -12,7 +12,7 @@ const translations = {
                 "description": "Nehmen Sie Bestellungen schnell per Telefon auf Ihrem Tablet oder Computer entgegen."
             },
             "smsmode": {
-                "description": "SMS-Marketing-Plattform. Synchronisieren Sie HubRise-Kunden mit smsmode."
+                "description": "SMS-Marketing-Plattform & WhatsApp. Synchronisieren Sie HubRise-Kunden mit smsmode."
             }
         },
         badge: {
@@ -35,7 +35,7 @@ const translations = {
                 "description": "Prenez des commandes rapidement par téléphone sur votre tablette ou votre ordinateur."
             },
             "smsmode": {
-                "description": "Plateforme de marketing par SMS. Synchronisez les clients HubRise avec smsmode."
+                "description": "Plateforme de marketing par SMS & WhatsApp. Synchronisez les clients HubRise avec smsmode."
             }
         },
         badge: {
@@ -58,7 +58,7 @@ const translations = {
                 description: "Take orders quickly by phone on your tablet or computer."
             },
             smsmode: {
-                description: "SMS marketing platform. Synchronize HubRise customers with smsmode."
+                description: "SMS marketing platform & WhatsApp. Synchronize HubRise customers with smsmode."
             }
         },
         badge: {
@@ -81,7 +81,7 @@ const translations = {
                 "description": "Toma pedidos rápidamente por teléfono en tu tablet o computadora."
             },
             "smsmode": {
-                "description": "Plataforma de marketing por SMS. Sincroniza los clientes de HubRise con smsmode."
+                "description": "Plataforma de marketing por SMS & WhatsApp. Sincroniza los clientes de HubRise con smsmode."
             }
         },
         badge: {
@@ -104,7 +104,7 @@ const translations = {
                 "description": "Receba pedidos rapidamente por telefone no seu tablet ou computador."
             },
             "smsmode": {
-                "description": "Plataforma de marketing por SMS. Sincronize os clientes do HubRise com a smsmode."
+                "description": "Plataforma de marketing por SMS & WhatsApp. Sincronize os clientes do HubRise com a smsmode."
             }
         },
         badge: {
