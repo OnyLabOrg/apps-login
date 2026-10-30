@@ -1,6 +1,7 @@
 const translations = {
     de: {
         title: "Melden Sie sich bei Ihrer OnyLab-Anwendung an",
+        error: "Die Verbindung ist fehlgeschlagen, bitte kontaktieren Sie <a href=\"mailto:support@onylab.com\">support@onylab.com</a>",
         "app": {
             "brevo": {
                 "description": "E-Mail- und SMS-Marketing-Plattform. Synchronisieren Sie HubRise-Kunden mit Brevo."
@@ -30,6 +31,7 @@ const translations = {
     },
     fr: {
         title: "Connectez-vous à votre application OnyLab",
+        error: "La connexion a échoué, veuillez contacter <a href=\"mailto:support@onylab.com\">support@onylab.com</a>",
         "app": {
             "brevo": {
                 "description": "Plateforme de marketing par email et SMS. Synchronisez les clients HubRise avec Brevo."
@@ -59,6 +61,7 @@ const translations = {
     },
     en: {
         title: "Connect to your OnyLab application",
+        error: "The connection failed, please contact <a href=\"mailto:support@onylab.com\">support@onylab.com</a>",
         app: {
             brevo: {
                 description: "Email &amp; SMS marketing platform. Synchronize HubRise customers with Brevo."
@@ -88,6 +91,7 @@ const translations = {
     },
     es: {
         title: "Conéctese a su aplicación OnyLab",
+        error: "La conexión ha fallado, póngase en contacto con <a href=\"mailto:support@onylab.com\">support@onylab.com</a>",
         "app": {
             "brevo": {
                 "description": "Plataforma de marketing por correo electrónico y SMS. Sincroniza los clientes de HubRise con Brevo."
@@ -117,6 +121,7 @@ const translations = {
     },
     pt: {
         title: "Conecte-se à sua aplicação OnyLab",
+        error: "A conexão falhou, entre em contato com <a href=\"mailto:support@onylab.com\">support@onylab.com</a>",
         "app": {
             "brevo": {
                 "description": "Plataforma de marketing por e-mail e SMS. Sincronize os clientes do HubRise com a Brevo."
@@ -172,6 +177,10 @@ function updateContent(lang) {
     const title = document.querySelector('.title');
     if (title !== null) {
         title.innerHTML = t.title;
+    }
+    const errorMessage = document.querySelector('.error-message');
+    if (errorMessage !== null) {
+        errorMessage.innerHTML = t.error;
     }
     const appDescriptionBrevo = document.querySelector('.app-description-brevo');
     if (appDescriptionBrevo !== null) {
@@ -304,6 +313,11 @@ document.addEventListener('mouseleave', () => {
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
     createParticles();
+
+    // Show error message if the "error" query parameter is present
+    if (new URLSearchParams(window.location.search).has('error')) {
+        document.querySelector('.error-message').hidden = false;
+    }
     
     // Detect preferred language (saved or browser)
     const savedLang = localStorage.getItem('preferredLanguage');
