@@ -368,6 +368,17 @@ body, html {
     margin-bottom: 40px;
 }
 
+/* Desktop: 3 columns, with a wider card so the tiles keep a usable size */
+@media (min-width: 641px) {
+    .login-card {
+        max-width: 640px;
+    }
+
+    .apps-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 /* Flip card wrapper — replaces direct app-card sizing */
 .app-card-wrapper {
     perspective: 1000px;
