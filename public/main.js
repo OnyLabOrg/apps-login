@@ -18,6 +18,9 @@ const translations = {
             "orderpicker": {
                 "description": "Kommissionieren Sie Bestellungen präzise und schneller mit einem Workflow, der Fehler minimiert und jede Vorbereitung beschleunigt."
             },
+            "shop": {
+                "description": "Mehr Bestellungen, keine Wartezeit. Bezahlen mit einem Klick – ohne App und Konto."
+            },
             "smsmode": {
                 "description": "SMS-Marketing-Plattform & WhatsApp. Synchronisieren Sie HubRise-Kunden mit smsmode."
             }
@@ -47,6 +50,9 @@ const translations = {
             },
             "orderpicker": {
                 "description": "Préparez les commandes avec précision et plus rapidement grâce à un flux de travail qui réduit les erreurs et accélère chaque préparation."
+            },
+            "shop": {
+                "description": "Plus de commandes, zéro attente. Paiement en 1 clic, sans app ni compte."
             },
             "smsmode": {
                 "description": "Plateforme de marketing par SMS & WhatsApp. Synchronisez les clients HubRise avec smsmode."
@@ -78,6 +84,9 @@ const translations = {
             orderpicker: {
                 description: "Pick orders accurately and faster with a workflow that minimizes errors and speeds up every preparation."
             },
+            "shop": {
+                "description": "More orders, zero wait. One-tap checkout, no app or account needed."
+            },
             smsmode: {
                 description: "SMS marketing platform & WhatsApp. Synchronize HubRise customers with smsmode."
             }
@@ -108,6 +117,9 @@ const translations = {
             "orderpicker": {
                 "description": "Prepara pedidos con precisión y mayor rapidez con un flujo de trabajo que minimiza errores y acelera cada preparación."
             },
+            "shop": {
+                "description": "Más pedidos, cero esperas. Pago en un clic, sin app ni cuenta."
+            },
             "smsmode": {
                 "description": "Plataforma de marketing por SMS & WhatsApp. Sincroniza los clientes de HubRise con smsmode."
             }
@@ -137,6 +149,9 @@ const translations = {
             },
             "orderpicker": {
                 "description": "Separe pedidos com precisão e mais rapidez com um fluxo de trabalho que minimiza erros e acelera cada preparação."
+            },
+            "shop": {
+                "description": "Mais pedidos, zero espera. Pagamento em 1 clique, sem app nem conta."
             },
             "smsmode": {
                 "description": "Plataforma de marketing por SMS & WhatsApp. Sincronize os clientes do HubRise com a smsmode."
@@ -201,6 +216,10 @@ function updateContent(lang) {
     const appDescriptionOrderPicker = document.querySelector('.app-description-orderpicker');
     if (appDescriptionOrderPicker !== null) {
         appDescriptionOrderPicker.innerHTML = t.app.orderpicker.description;
+    }
+    const appDescriptionShop = document.querySelector('.app-description-shop');
+    if (appDescriptionShop !== null) {
+        appDescriptionShop.innerHTML = t.app.shop.description;
     }
     const appDescriptionSMSMode = document.querySelector('.app-description-smsmode');
     if (appDescriptionSMSMode !== null) {
