@@ -6,6 +6,9 @@ const translations = {
             "brevo": {
                 "description": "E-Mail- und SMS-Marketing-Plattform. Synchronisieren Sie HubRise-Kunden mit Brevo."
             },
+            "customerflow": {
+                "description": "Kundenmarketing, Kundenbindung und Prämien: Machen Sie Ihre Kunden zu treuen Stammkunden."
+            },
             "gmb": {
                 "description": "Gewinnen Sie mehr Kunden, indem Sie auf Google Search und Maps auf Platz 1 ranken."
             },
@@ -38,6 +41,9 @@ const translations = {
         "app": {
             "brevo": {
                 "description": "Plateforme de marketing par email et SMS. Synchronisez les clients HubRise avec Brevo."
+            },
+            "customerflow": {
+                "description": "Marketing client, rétention et récompenses : transformez vos clients en clients fidèles."
             },
             "gmb": {
                 "description": "Attirez plus de clients en étant classé n°1 sur Google Search et Maps."
@@ -72,6 +78,9 @@ const translations = {
             brevo: {
                 description: "Email &amp; SMS marketing platform. Synchronize HubRise customers with Brevo."
             },
+            "customerflow": {
+                "description": "Customer marketing, retention and rewards: turn your customers into loyal regulars."
+            },
             gmb: {
                 description: "Attract more customers by ranking #1 on Google Search and Maps."
             },
@@ -105,6 +114,9 @@ const translations = {
             "brevo": {
                 "description": "Plataforma de marketing por correo electrónico y SMS. Sincroniza los clientes de HubRise con Brevo."
             },
+            "customerflow": {
+                "description": "Marketing de clientes, retención y recompensas: convierte a tus clientes en clientes fieles."
+            },
             "gmb": {
                 "description": "Atrae a más clientes posicionándote #1 en Google Search y Maps."
             },
@@ -137,6 +149,9 @@ const translations = {
         "app": {
             "brevo": {
                 "description": "Plataforma de marketing por e-mail e SMS. Sincronize os clientes do HubRise com a Brevo."
+            },
+            "customerflow": {
+                "description": "Marketing de clientes, retenção e recompensas: transforme seus clientes em clientes fiéis."
             },
             "gmb": {
                 "description": "Atraia mais clientes ao alcançar o #1 no Google Search e Maps."
@@ -200,6 +215,10 @@ function updateContent(lang) {
     const appDescriptionBrevo = document.querySelector('.app-description-brevo');
     if (appDescriptionBrevo !== null) {
         appDescriptionBrevo.innerHTML = t.app.brevo.description;
+    }
+    const appDescriptionCustomerFlow = document.querySelector('.app-description-customerflow');
+    if (appDescriptionCustomerFlow !== null) {
+        appDescriptionCustomerFlow.innerHTML = t.app.customerflow.description;
     }
     const appDescriptionGmb = document.querySelector('.app-description-gmb');
     if (appDescriptionGmb !== null) {
