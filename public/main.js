@@ -314,20 +314,65 @@ function createParticles() {
     }
 }
 
-// Parallax effect on login card
-document.addEventListener('mousemove', (e) => {
-    const card = document.querySelector('.login-card');
-    const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
-    const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+// Parallax tilt on the login card, eased frame by frame instead of jumping on each mousemove.
+// The card returns flat while the pointer is over the apps, and its 3D transform is then removed
+// entirely: a tilted parent forces the tiles to be resampled, which blurs their text and icons.
+(function initParallax() {
+    const MAX_TILT = 5;          // degrees across the full viewport
+    const SMOOTHING_MS = 140;    // time constant of the easing
+    const motionOk = window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
 
-    card.style.transform = `perspective(1000px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-5px)`;
-});
+    let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+    let frame = null, lastTime = 0;
 
-// Reset card when mouse leaves the window
-document.addEventListener('mouseleave', () => {
-    const card = document.querySelector('.login-card');
-    card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-5px)';
-});
+    function render(time) {
+        const card = document.querySelector('.login-card');
+        const dt = lastTime ? Math.min(time - lastTime, 64) : 16;
+        lastTime = time;
+
+        const k = 1 - Math.exp(-dt / SMOOTHING_MS);
+        currentX += (targetX - currentX) * k;
+        currentY += (targetY - currentY) * k;
+
+        const settled = Math.abs(targetX - currentX) < 0.01 && Math.abs(targetY - currentY) < 0.01;
+        if (settled) {
+            currentX = targetX;
+            currentY = targetY;
+        }
+
+        card.style.transform = (currentX === 0 && currentY === 0)
+            ? ''
+            : `perspective(1000px) rotateY(${currentX.toFixed(3)}deg) rotateX(${currentY.toFixed(3)}deg)`;
+
+        if (settled) {
+            frame = null;
+            lastTime = 0;
+        } else {
+            frame = requestAnimationFrame(render);
+        }
+    }
+
+    function setTarget(x, y) {
+        targetX = x;
+        targetY = y;
+        if (frame === null) {
+            frame = requestAnimationFrame(render);
+        }
+    }
+
+    document.addEventListener('mousemove', (e) => {
+        if (!motionOk.matches || e.target.closest('.apps-grid')) {
+            setTarget(0, 0);
+            return;
+        }
+        const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+        const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+        setTarget(x * MAX_TILT, -y * MAX_TILT);
+    });
+
+    // Reset card when the mouse leaves the window
+    document.documentElement.addEventListener('mouseleave', () => setTarget(0, 0));
+})();
 
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
@@ -381,36 +426,3 @@ document.addEventListener('DOMContentLoaded', () => {
 function connectToApp(appKey) {
     window.location.href = 'https://login.apps.onylab.com/auth?app=' + String(appKey);
 }
-
-// Flip cards — lock state during transition to prevent animation glitches
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.app-card').forEach(card => {
-        let isAnimating = false;
-
-        function onFlipEnd() {
-            isAnimating = false;
-            if (!card.matches(':hover')) {
-                card.classList.remove('flipped');
-            }
-        }
-
-        card.addEventListener('mouseenter', () => {
-            isAnimating = true;
-            card.classList.add('flipped');
-        });
-
-        card.addEventListener('mouseleave', () => {
-            if (!isAnimating) {
-                card.classList.remove('flipped');
-                return;
-            }
-            // Wait for the flip transition to complete before unflipping
-            card.addEventListener('transitionend', function handler(e) {
-                if (e.propertyName !== 'transform') return;
-                card.removeEventListener('transitionend', handler);
-                onFlipEnd();
-            });
-            setTimeout(onFlipEnd, 3000);
-        });
-    });
-});
